@@ -141,6 +141,8 @@ After the training is done, an evaluation process on the test set will be automa
 
 ### MSVD
 
+The comparison with the existing methods and also the ablation study of our method can be found in our paper.
+
 | Method  | CLIP Model | BLEU@4 | METEOR | ROUGE-L | CIDEr |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Ours (Action + Object) | ViT-B/32 | 62.56 | 41.53 | 78.62 | 120.64 |
