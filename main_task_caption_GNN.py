@@ -57,7 +57,7 @@ def get_args(description='CaptionGenerator'):
     parser.add_argument('--use_geometric_hdf5', action='store_true', help='use hdf5 version geometric')
 
     parser.add_argument('--gnn_model_type', type=str, default='gat',
-                        help='gat, transformer, etc')
+                        help='gat, gatv2, or transformer')
 
     parser.add_argument('--num_thread_reader', type=int, default=1, help='')
     parser.add_argument('--lr', type=float, default=0.0001, help='initial learning rate')
