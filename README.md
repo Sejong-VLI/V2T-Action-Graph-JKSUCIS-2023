@@ -1,5 +1,7 @@
-
 # Action Knowledge for Video Captioning with Graph Neural Networks
+The official repository of our paper "Action Knowledge for Video Captioning with Graph Neural Networks".
+
+**(2023.03.11)** Our paper has been accepted by Journal of King Saud University - Computer and Information Sciences (JKSU-CIS).
 
 ## Prepare the Environment 
 Install and create conda environment with the provided `environment.yml` file.
@@ -131,6 +133,25 @@ cd scripts/
 cd scripts/
 ./msrvtt_train_GNN.sh  
 ```
+
+## Our Results
+
+### MSVD
+
+| Method  | CLIP Model | BLEU@4 | METEOR | ROUGE-L | CIDEr |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Ours (Action + Object) | ViT-B/32 | 62.56 | 41.53 | 78.62 | 120.64 |
+| Ours (Action + Grid) | ViT-B/32 | 62.90 | 41.81 | 78.80 | 119.07 |
+| Ours (Action + Grid) | ViT-B/16 | 64.07 | 42.41 | 79.72 | 124.18 |
+
+#### MSR-VTT
+
+| Method  | CLIP Model | BLEU@4 | METEOR | ROUGE-L | CIDEr |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Ours (Action + Object) | ViT-B/32 | 48.31 | 31.35 | 65.34 | 60.00 |
+| Ours (Action + Grid) | ViT-B/32 | 49.10 | 31.57 | 65.52 | 61.27 |
+| Ours (Action + Grid) | ViT-B/16 | 51.02 | 32.19 | 66.55 | 63.02 |
+
 
 ## Acknowledgements
 Our code is based on https://github.com/huggingface/transformers/tree/v0.4.0 and https://github.com/microsoft/UniVL
