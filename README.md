@@ -139,9 +139,9 @@ After the training is done, an evaluation process on the test set will be automa
 
 ## Our Results
 
-### MSVD
-
 The comparison with the existing methods and also the ablation study of our method can be found in our paper.
+
+### MSVD
 
 | Method  | CLIP Model | BLEU@4 | METEOR | ROUGE-L | CIDEr |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
