@@ -134,6 +134,9 @@ cd scripts/
 ./msrvtt_train_GNN.sh  
 ```
 
+## Evaluation
+After the training is done, an evaluation process on the test set will be automatically executed using the best checkpoint among all epochs. However, if you want to evaluate a checkpoint at a specific epoch, you can use the provided training shell script by modifying the value of `INIT_MODEL_PATH` to the location of the desired checkpoint, and replacing the `--do_train` to `--do_eval`.
+
 ## Our Results
 
 ### MSVD
