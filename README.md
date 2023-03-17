@@ -159,4 +159,4 @@ The comparison with the existing methods and also the ablation study of our meth
 
 
 ## Acknowledgements
-Our code is based on https://github.com/huggingface/transformers/tree/v0.4.0 and https://github.com/microsoft/UniVL
+Our code is developed based on https://github.com/microsoft/UniVL, which is also developed based on https://github.com/huggingface/transformers/tree/v0.4.0 and https://github.com/antoine77340/howto100m .
