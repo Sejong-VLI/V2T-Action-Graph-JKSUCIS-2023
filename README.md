@@ -1,6 +1,6 @@
 # Action Knowledge for Video Captioning with Graph Neural Networks
 ## Description
-The implementation of our paper [**Action Knowledge for Video Captioning with Graph Neural Networks**](https://www.sciencedirect.com/science/article/pii/S1319157823000666)
+This is the implementation of our paper entitled [**"Action Knowledge for Video Captioning with Graph Neural Networks"**](https://www.sciencedirect.com/science/article/pii/S1319157823000666).
 
 Our approach for video captioning introduces a new technique that leverages action as edge features within a graph neural network (GNN), with objects represented as nodes. By integrating object-action relationships into the GNN, our method enhances the visual representation and generates more precise captions. Furthermore, we enhance the performance by combining the proposed edge representation with a node representation based on grids. By overlapping the grids, the model captures more comprehensive information about the objects, leading to further improvements in performance.
 
@@ -43,10 +43,9 @@ pip install seaborn
 │   │   ├── MSRVTT_data.json # metadata of msrvtt dataset, which includes video url, video id, and caption
 ```
 ### MSR-VTT
-Raw videos can be downloaded from this [link](https://github.com/VisionLearningGroup/caption-guided-saliency/issues/6). We provided the captions in dataset/MSRVTT folder
+Raw videos can be downloaded from this [link](https://github.com/VisionLearningGroup/caption-guided-saliency/issues/6). We provided the captions in dataset/MSRVTT folder.
 ### MSVD
-
-Raw videos can be downloaded from this [link](https://www.cs.utexas.edu/users/ml/clamp/videoDescription/). We provided the captions in dataset/MSVD folder
+Raw videos can be downloaded from this [link](https://www.cs.utexas.edu/users/ml/clamp/videoDescription/). We provided the captions in dataset/MSVD folder.
 
 ## Extract the Features
 ### Feature Extractor Folder Structure
@@ -91,13 +90,12 @@ Steps:
 2. Extract spatial action graph by using **object_based_spatial_action_graph.ipynb**.
 3. Extract temporal action graph by using **temporal_similarity_graph.ipynb**.
 4. Create the object based action graph: 
-   - run **action_spatio_temporal_graph_feature_extractor.ipynb** then ,
-   - run **transform-graph-to-geometric.ipynb**
+   - Run **action_spatio_temporal_graph_feature_extractor.ipynb** then,
+   - Run **transform-graph-to-geometric.ipynb**.
 
 ## Training
 
-1. Download a pretrained BERT model
-This is used as word embedding and tokenizer for the captions.
+1. Download a pretrained BERT model. This is used as word embedding and tokenizer for the captions.
 ```
 mkdir modules/bert-model
 cd modules/bert-model/
@@ -108,8 +106,7 @@ tar -xvf bert-base-uncased.tar.gz
 rm bert-base-uncased.tar.gz
 cd ../../
 ```
-2. Download a pretrained weight of UniVL
-This is used to initialize our caption generator.
+2. Download a pretrained weight of UniVL. This is used to initialize our caption generator.
 ```
 mkdir -p ./weight
 wget -P ./weight https://github.com/microsoft/UniVL/releases/download/v0/univl.pretrained.bin
@@ -125,7 +122,7 @@ wget -P ./weight https://github.com/microsoft/UniVL/releases/download/v0/univl.p
     - **INIT_MODEL_PATH** = [UniVL pretrained model location]
     - **FEATURES_PATH** = [CLIP-based features]
     - **DATA_GEOMETRIC_PATH** = [Generated Action Graph feature path (Grid-based action graph or Object-based action graph)]
-7. Based on object detection model, change **node_feat_dim** according to the object feature dimension, e.g for Yolo the node_feat_dim is 1024
+7. Based on object detection model, change **node_feat_dim** according to the object feature dimension, e.g for YOLO the node_feat_dim is 1024.
 8. Execute the following scripts to start the training process:
 
 #### Train our proposed method
@@ -170,13 +167,13 @@ Our code is developed based on https://github.com/microsoft/UniVL, which is also
 Please cite our paper in your publications if it helps your research as follows:
 ```
 @article{Hendria2023,
-      author = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
-      title = {Action Knowledge for Video Captioning with Graph Neural Networks},
-      journal = {J. King Saud Univ.-Comput. Inf. Sci.},
-      volume = {35},
-      number = {4},
-      pages = {50-62},
-      month = apr,
-      year = {2023}"
+      author   = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
+      title    = {Action Knowledge for Video Captioning with Graph Neural Networks},
+      journal  = {J. King Saud Univ.-Comput. Inf. Sci.},
+      volume   = {35},
+      number   = {4},
+      pages    = {50-62},
+      month    = apr,
+      year     = {2023}"
 }
 ```
