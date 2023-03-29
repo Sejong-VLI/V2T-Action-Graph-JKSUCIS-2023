@@ -1,10 +1,10 @@
 # Action Knowledge for Video Captioning with Graph Neural Networks
 ## Description
-This is the official implementation of the paper [**Action Knowledge for Video Captioning with Graph Neural Networks**](https://www.sciencedirect.com/science/article/pii/S1319157823000666)
+The implementation of our paper [**Action Knowledge for Video Captioning with Graph Neural Networks**](https://www.sciencedirect.com/science/article/pii/S1319157823000666)
 
 Our approach for video captioning introduces a new technique that leverages action as edge features within a graph neural network (GNN), with objects represented as nodes. By integrating object-action relationships into the GNN, our method enhances the visual representation and generates more precise captions. Furthermore, we enhance the performance by combining the proposed edge representation with a node representation based on grids. By overlapping the grids, the model captures more comprehensive information about the objects, leading to further improvements in performance.
 
-It is demonstrated  in the experiments of MSVD and MSR-VTT that our method significantly outperformed the existing methods.
+It is demonstrated in the experiments of MSVD and MSR-VTT that our method improved video captioning quantitatively and qualitatively.
 
 The illustration of our proposed action-graph model with overlapping grid is shown below:
 ![alt text](/assets/action-graph.png)
@@ -43,10 +43,10 @@ pip install seaborn
 │   │   ├── MSRVTT_data.json # metadata of msrvtt dataset, which includes video url, video id, and caption
 ```
 ### MSR-VTT
-Raw videos can be downloaded from this [link](https://github.com/VisionLearningGroup/caption-guided-saliency/issues/6).
+Raw videos can be downloaded from this [link](https://github.com/VisionLearningGroup/caption-guided-saliency/issues/6). We provided the captions in dataset/MSRVTT folder
 ### MSVD
 
-Raw videos can be downloaded from this [link](https://www.cs.utexas.edu/users/ml/clamp/videoDescription/).
+Raw videos can be downloaded from this [link](https://www.cs.utexas.edu/users/ml/clamp/videoDescription/). We provided the captions in dataset/MSVD folder
 
 ## Extract the Features
 ### Feature Extractor Folder Structure
@@ -62,23 +62,24 @@ Raw videos can be downloaded from this [link](https://www.cs.utexas.edu/users/ml
 
 **Note** 
 ```
-- Please make sure you have copy modules from CLIP4Clip https://github.com/ArrowLuo/CLIP4Clip/tree/master/modules into feature_extractor/modules
-- Please make sure you have downloaded rgb_imagenet.pt into feature_extractor/pretrained
-- Please change args in each notebook based on requirement e.g,. args.msvd = False for MSR-VTT and args.msvd = True for MSVD
+- Please make sure you have copied modules from CLIP4Clip https://github.com/ArrowLuo/CLIP4Clip/tree/master/modules into feature_extractor/modules.
+- Please make sure you have downloaded rgb_imagenet.pt into feature_extractor/pretrained.
+- Please change args in each notebook based on requirement e.g,. args.msvd = False for MSR-VTT and args.msvd = True for MSVD.
 ```
 
 ## CLIP-based features 
 Steps:
-1. Train CLIP4Clip based on https://github.com/ArrowLuo/CLIP4Clip and put the best model in the **pretrained** folder
-   - For MSR-VTT, we use 6513 clips for training, 497 clips for validation and 2990 clips for testing when training the CLIP4Clip
-2. Extract the CLIP-based features by using **clip4clip_theta_2_feature_extraction.ipynb**
+1. Train CLIP4Clip based on https://github.com/ArrowLuo/CLIP4Clip and put the best model in the **pretrained** folder.
+   - For MSR-VTT, we use 6513 clips for training, 497 clips for validation and 2990 clips for test when training the CLIP4Clip.
+   - For MSVD, we use 1200 clips for training, 100 clips for validation and 670 clips for test when training the CLIP4Clip.
+2. Extract the CLIP-based features by using **clip4clip_theta_2_feature_extraction.ipynb**.
 
 ## Features of Grid-based Action Graph and Object-based Action Graph
 ### Grid Based Action Graph
 Steps: 
-1. Extract grid node by using **grid_node_theta_1_feature_extractor.ipynb**
-2. Extract spatial action graph by using **grid_based_spatial_action_graph.ipynb**
-3. Extract temporal action graph by using **temporal_similarity_graph.ipynb**
+1. Extract grid node by using **grid_node_theta_1_feature_extractor.ipynb**.
+2. Extract spatial action graph by using **grid_based_spatial_action_graph.ipynb**.
+3. Extract temporal action graph by using **temporal_similarity_graph.ipynb**.
 4. Create the grid based action graph: 
 
    - run **action_spatio_temporal_graph_feature_extractor.ipynb** then ,
@@ -86,9 +87,9 @@ Steps:
 
 ### Object Based Action Graph
 Steps: 
-1. Extract object node by using **object_node_theta_1_feature_extractor.ipynb**
-2. Extract spatial action graph by using **object_based_spatial_action_graph.ipynb**
-3. Extract temporal action graph by using **temporal_similarity_graph.ipynb**
+1. Extract object node by using **object_node_theta_1_feature_extractor.ipynb**.
+2. Extract spatial action graph by using **object_based_spatial_action_graph.ipynb**.
+3. Extract temporal action graph by using **temporal_similarity_graph.ipynb**.
 4. Create the object based action graph: 
    - run **action_spatio_temporal_graph_feature_extractor.ipynb** then ,
    - run **transform-graph-to-geometric.ipynb**
@@ -169,13 +170,13 @@ Our code is developed based on https://github.com/microsoft/UniVL, which is also
 Please cite our paper in your publications if it helps your research as follows:
 ```
 @article{Hendria2023,
-  author = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
-  title = {Action Knowledge for Video Captioning with Graph Neural Networks},
-  journal = {J. King Saud Univ.-Comput. Inf. Sci.},
-  volume = {35},
-  number = {4},
-  pages = {50-62},
-  month = apr,
-  year = {2023}"
+      author = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
+      title = {Action Knowledge for Video Captioning with Graph Neural Networks},
+      journal = {J. King Saud Univ.-Comput. Inf. Sci.},
+      volume = {35},
+      number = {4},
+      pages = {50-62},
+      month = apr,
+      year = {2023}"
 }
 ```
