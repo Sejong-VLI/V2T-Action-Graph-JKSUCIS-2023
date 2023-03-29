@@ -166,7 +166,7 @@ The comparison with the existing methods and also the ablation study of our meth
 Our code is developed based on https://github.com/microsoft/UniVL, which is also developed based on https://github.com/huggingface/transformers/tree/v0.4.0 and https://github.com/antoine77340/howto100m .
 
 ## Citation
-Please cite our paper in your publications if it helps your research:
+Please cite our paper in your publications if it helps your research as follows:
 ```
 @article{Hendria2023,
   author = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
