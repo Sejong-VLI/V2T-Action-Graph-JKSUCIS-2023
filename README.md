@@ -1,6 +1,6 @@
 # Action Knowledge for Video Captioning with Graph Neural Networks
 ## Description
-The official implementation of paper [**Action Knowledge for Video Captioning with Graph Neural Networks**](https://www.sciencedirect.com/science/article/pii/S1319157823000666)
+This is the official repository for the paper [**Action Knowledge for Video Captioning with Graph Neural Networks**](https://www.sciencedirect.com/science/article/pii/S1319157823000666)
 
 Our approach for video captioning introduces a new technique that leverages action as edge features within a graph neural network (GNN), with objects represented as nodes. By integrating object-action relationships into the GNN, our method enhances the visual representation and generates more precise captions. Furthermore, we enhance the performance by combining the proposed edge representation with a node representation based on grids. By overlapping the grids, the model captures more comprehensive information about the objects, leading to further improvements in performance.
 
@@ -8,8 +8,6 @@ It is demonstrated  in the experiments of MSVD and MSR-VTT that our method signi
 
 The illustration of our proposed action-graph model with overlapping grid is shown below:
 ![alt text](/assets/action-graph.png)
-
-
 
 ## Prepare the Environment 
 Install and create conda environment with the provided `environment.yml` file.
@@ -61,7 +59,6 @@ Raw videos can be downloaded from this [link](https://www.cs.utexas.edu/users/ml
 │   ├── rgb_imagenet.pt # Download I3D model: https://github.com/piergiaj/pytorch-i3d/blob/master/models/rgb_imagenet.pt
 ├── utility # Some helper functions to generate the features
 ```
-
 
 **Note** 
 ```
@@ -165,20 +162,20 @@ The comparison with the existing methods and also the ablation study of our meth
 | Ours (Action + Grid) | ViT-B/32 | 49.10 | 31.57 | 65.52 | 61.27 |
 | Ours (Action + Grid) | ViT-B/16 | 51.02 | 32.19 | 66.55 | 63.02 |
 
+## Acknowledgements
+Our code is developed based on https://github.com/microsoft/UniVL, which is also developed based on https://github.com/huggingface/transformers/tree/v0.4.0 and https://github.com/antoine77340/howto100m .
+
 ## Citation
 Please cite our paper in your publications if it helps your research:
 ```
 @article{Hendria2023,
-  author   = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
-  title        = {Action Knowledge for Video Captioning with Graph Neural Networks},
-  journal   = {J. King Saud Univ.-Comput. Inf. Sci.},
-  volume   = {35},
-  number   = {4},
-  pages     = {50-62},
-  month     = apr,
-  year       = {2023}"
+  author = {W. F. Hendria and V. Velda and B. H. H. Putra and F. Adzaka and C. Jeong},
+  title = {Action Knowledge for Video Captioning with Graph Neural Networks},
+  journal = {J. King Saud Univ.-Comput. Inf. Sci.},
+  volume = {35},
+  number = {4},
+  pages = {50-62},
+  month = apr,
+  year = {2023}"
 }
 ```
-
-## Acknowledgements
-Our code is developed based on https://github.com/microsoft/UniVL, which is also developed based on https://github.com/huggingface/transformers/tree/v0.4.0 and https://github.com/antoine77340/howto100m .
